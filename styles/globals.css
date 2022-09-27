@@ -1,3 +1,459 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    @font-face {
+        font-family: "Museo_Slab";
+        src: url(../public/fonts/Museo Slab/Museo_Slab_300.woff2);
+        font-weight:300;
+    }
+
+    @font-face {
+        font-family: "Museo_Slab";
+        src: url(../public/fonts/Museo Slab/Museo_Slab_500.woff2);
+        font-weight:500;
+    }
+
+    @font-face {
+        font-family: "Museo_Slab";
+        src: url(../public/fonts/Museo Slab/Museo_Slab_700.woff2);
+        font-weight:700;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-250.woff2);
+        font-weight:250;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-300.woff2);
+        font-weight:300;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-350.woff2);
+        font-weight:350;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-400.woff2);
+        font-weight:400;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-450.woff2);
+        font-weight:450;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-600.woff2);
+        font-weight:600;
+    }
+
+    @font-face {
+        font-family: "Twk_lausanne";
+        src: url(../public/fonts/TWK Lausanne/TWKLausanne-650.woff2);
+        font-weight:650;
+    }
+
+    .giveborder
+    {
+        @apply border-[1px] border-[red]
+    }
+
+    body{
+        @apply font-Twk text-[14px]
+    }
+
+    .feature-card{
+        @apply p-[16px] mobile:p-[10px] bg-primaryColors-cream100 rounded-[12px] relative z-[100]
+    }
+}
+
+.feature-card
+{
+    box-shadow:rgba(53,49,72,0.09) 0px 3px 11px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ::-webkit-scrollbar-thumb {
+   display:none
+}
+
+::-webkit-scrollbar {
+   display: none;
+} */
+
+
+
+body {
+    background: #f7f8f2;
+    color: #0b1e5b;
+}
+
+
+
+
+
+
+.navbar-container
+{
+    padding: 0px 20px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    max-width: 100%;
+}
+
+
+
+
+
+
+@media (min-width: 768px)
+{
+    .navbar-container
+    {
+        padding: 25px 80px 0px;
+    } 
+}
+
+@media (min-width: 1200px)
+{
+    .navbar-container
+    {
+      margin:auto;
+      max-width: 1200px;
+    } 
+}
+
+@media (min-width: 1400px)
+{
+    .navbar-container
+    {
+        padding: 25px 100px 0px;
+        max-width: 1400px;
+    } 
+}
+
+
+@media (min-width: 1600px)
+{
+    .navbar-container
+    {
+        padding: 25px 120px 0px;
+        max-width: 1600px;
+    } 
+}
+
+.navbar-container
+{
+    max-width: 100%;
+}
+
+
+
+.navbar-logo {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    width: 70px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+@media (min-width: 1200px)
+{
+.navbar-logo {
+    width: 90px;
+    height: 26px;
+}
+}
+
+@media (min-width: 768px){
+.navbar-logo {
+    margin-right: 50px;
+}
+}
+
+@media (min-width: 768px){
+.navbar-logo {
+    width: 80px;
+    height: 23px;
+}
+}
+
+.navbar-nav {
+    display: block;
+    margin: 0 0 40px;
+    font-size: 32px;
+    letter-spacing: .02em;
+    font-weight: 400;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+@media (min-width: 768px){
+.navbar-nav {
+ 
+    display: inline-block;
+    padding: 0 25px;
+    margin: 0;
+    font-size: 16px;
+    vertical-align: bottom;
+}
+}
+
+
+.btn-nav
+{
+    cursor:pointer;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 149px;
+    height: 55px;
+    font-size: 16px;
+    letter-spacing: .02em;
+    position: relative;
+
+  
+}
+
+
+
+
+
+
+.btn-nav-bg {
+    position: absolute;
+ 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../public/images/landing/btn-nav.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+.navbar-action {
+    display: none;
+}
+
+
+@media (min-width: 768px){
+.navbar-action {
+    display: inline-block;
+    vertical-align: middle;
+}
+}
+
+
+@media (min-width: 1600px){
+.introduction {
+    padding: 200px 0 170px;
+}}
+@media (min-width: 1200px){
+.introduction {
+    padding: 165px 0 170px;
+}}
+@media (min-width: 1024px){
+.introduction {
+    padding: 140px 0 200px;
+    text-align: left;
+}}
+@media (min-width: 768px){
+.introduction {
+    text-align: center;
+}}
+.introduction {
+    padding: 90px 0 30px;
+}
+
+@media (min-width: 1600px){
+.intro-container
+{
+    padding: 0 120px;
+    max-width: 1600px;
+}}
+
+@media (min-width: 1400px){
+.intro-container{
+    padding: 0 100px;
+    max-width: 1400px;
+}}
+@media (min-width: 1200px){
+.intro-container{
+    max-width: 1200px;
+    margin: 0 auto;
+}}
+@media (min-width: 768px){
+.intro-container{
+    padding: 0 120px;
+}}
+
+.intro-container{
+    padding: 0 20px;
+    border:1px solid red;
+}
+
+
+
+@media (min-width: 1600px){
+.introduction h1 {
+    font-size: 72px;
+    /* line-height: 102%; */
+}}
+@media (min-width: 1200px){
+.introduction h1 {
+    font-size: 60px;
+    /* line-height: 122%; */
+}}
+@media (min-width: 768px){
+.introduction h1 {
+    font-size: 52.8px;
+    /* line-height: 140%; */
+}}
+.introduction  {
+    font-family: "Museo_Slab",sans-serif;
+    font-weight: 300;
+    font-size: 33.6px;
+    /* line-height: 120%; */
+    margin:0;
+    padding:0
+}
+
+
+
+
+
+
+
+@media (min-width: 1600px){
+.text-content-body{
+    font-size: 26px;
+    
+}}
+@media (min-width: 1200px){
+.text-content-body
+ {
+    padding: 24px 0 0;
+}}
+@media (min-width: 1024px){
+.text-content-body
+ {
+    padding: 20px 0 0;
+    margin: 0;
+}}
+@media (min-width: 768px){
+.text-content-body
+ {
+    max-width: 410px;
+    margin: 0 auto;
+    font-size: 22px;
+  
+}}
+.text-content-body
+ {
+    
+    padding: 15px 0 0;
+    font-size: 18px;
+     border:1px solid blue;
+    font-weight: 250;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ripple-container {
+    --width:100%;
+    --time:0.7s;
+
+	position: relative;
+	display: inline-block;
+	height: 3em;
+	padding: 1em;
+    padding-left: 8rem;
+	color: white;
+	background: #222;
+    margin:5rem;
+}
+
+.ripple-container .text {
+
+	position: relative;
+	z-index: 5;
+	transition: color var(--time);
+}
+
+.ripple-container:hover .text {
+	color: #222;
+}
+
+
+.ripple-container div {
+	position: absolute;
+    
+	z-index: 0;
+    content:"";
+	width: 0px;
+	height: 0px;
+	border-radius: 100%;
+	background: #fff;
+	transform: translate(-80%, -80%);
+	transition: width var(--time), padding-top var(--time);
+}
+
+.ripple-container:hover div {
+	width: calc(var(--width) * 2.25);
+	padding-top: calc(var(--width) * 2.25);
+}
+
+
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: red;
+    transform-origin: 0%;
+  }
+  
+
