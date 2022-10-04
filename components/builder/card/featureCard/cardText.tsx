@@ -14,6 +14,7 @@ const featureCardTextStyle = {
     font-[500] text-[25px] font-Museo mb-[1rem] leading-[36.5px]`,
 
     contentContainer: `
+    desktop:text-[22px]
     laptop:leading-[30px]
     minitab:text-[18px] minitab:leading-[25px]
     text-[14px] font-[200] leading-[20px]`

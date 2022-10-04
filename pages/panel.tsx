@@ -10,7 +10,6 @@ export default function ()
    
 
     useEffect(()=>{
-
         gsap.to(boxRef.current,{  
             xPercent: -100 * 4,
             scrollTrigger:{

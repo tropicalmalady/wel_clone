@@ -11,13 +11,13 @@ interface FeatureCardProps {
 const style = {
     wrapper: `
     desktop:m-[4rem]
-    laptop:m-[2rem]
+    laptop:my-[4rem] laptop:mx-[2rem]
     minitab:rounded-[56px]
     overflow-hidden rounded-[24px] bg-primaryColors-purple200  `,
 
     container: `
     desktop:px-[120px] desktop:max-w-[1600px] desktop:h-[calc(100vh-8rem)]
-    laptop:max-w-[1400px] laptop:px-[100px] laptop:h-[calc(100vh-4rem)]
+    laptop:max-w-[1400px] laptop:px-[100px] laptop:h-[calc(100vh-8rem)]
     minitab:px-[80px] 
     p-[20px]  border-[blue] m-auto `,
 
@@ -36,7 +36,7 @@ const style = {
 }
 
 export default function FeatureCard({ props }: { props: FeatureCardProps }) {
-    return <div className="box">
+    return <div>
         <div className={style.wrapper}>
             <div className={style.container}>
                 <div className={style.flex}>

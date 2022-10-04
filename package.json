@@ -6,13 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "framer-motion": "^7.2.1",
     "gsap": "^3.11.1",
     "next": "latest",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
-    "react-player": "^2.11.0",
     "zustand": "^4.1.0"
   },
   "devDependencies": {

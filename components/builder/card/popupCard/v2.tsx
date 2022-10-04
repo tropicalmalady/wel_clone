@@ -6,7 +6,7 @@ const style = {
      desktop:min-w-[179px]
      laptop:min-w-[138px]
      minitab:min-w-[116px]
-     min-w-[105px] feature-card`,
+     min-w-[105px] popup-card`,
 
     imageOne: `
      desktop:max-w-[33px]
@@ -25,11 +25,11 @@ const style = {
 export function PopupCardTwo() {
     return <div className={style.container}>
         <div className={style.imageOne}>
-            <Image src={Images.Landing.cardOne1} />
+            <Image src={Images.Landing.popupCard2img1} />
         </div>
 
         <div className={style.imageTwo}>
-            <Image src={Images.Landing.cardOne2} />
+            <Image src={Images.Landing.popupCard2img2} />
         </div>
     </div>
 }

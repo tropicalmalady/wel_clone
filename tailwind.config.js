@@ -22,7 +22,8 @@ const secondaryColors={
   pink:"#e64676",
   fadedPurple:"#262333",
   fadedBlue:"#3a4a79",
-  blue:"#4e50f4"
+  blue:"#4e50f4",
+  outlineBlue:'#dee5fb'
 }
 
 const Colors=
@@ -32,7 +33,8 @@ primaryColors,secondaryColors
 
 const  screens= {  
   'foldable': {'max':'319px'},
-  'mobile': { 'min':'320px'},
+  "minimobile":{'min':'320px'},
+  'mobile': { 'min':'351px'},
   'minitab': {'min':'768px'},
   'tab':{'min':'1024px'},
   'laptop':{'min':'1200px'},
