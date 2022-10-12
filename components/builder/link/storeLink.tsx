@@ -4,27 +4,27 @@ import { FaGooglePlay } from "react-icons/fa";
 
 const style = {
     buttonContainer: (isDarkmode: boolean) => `
-    desktop:w-[12vw] desktop:h-[3.5vw] desktop:rounded-[2vw] desktop:gap-[1vw]
+    desktop:w-[16vw] desktop:h-[5vw] desktop:rounded-[5vw] desktop:gap-[1.2vw]
     minitab:w-[192px]
     w-[160px] rounded-[60px] h-[62px] flex items-center justify-center gap-[0.7rem] ${isDarkmode ? "bg-primaryColors-purple700" : "bg-primaryColors-cream200"} relative`,
 
     iconWrapper: (isDarkmode: boolean) => `
-    desktop:text-[1.3vw]
+    desktop:text-[2vw] 
     minitab:text-[25px] 
     text-[18px] ${isDarkmode ? "text-primaryColors-cream100" : "text-primaryColors-purple700"}`,
 
     textWrapper: (isDarkmode: boolean) => `
-    desktop:leading-[0.9vw]
+    desktop:leading-[1.4vw]
     minitab:leading-[16.8px] 
     leading-[14px] ${isDarkmode ? "text-primaryColors-cream100" : "text-primaryColors-purple700"} text-left`,
 
     textOne: `
-    desktop:text-[0.9vw]
+    desktop:text-[1.1vw]
     minitab:text-[14px]
     text-[12px] opacity-[0.5]`,
 
     textTwo: `
-    desktop:text-[1vw]
+    desktop:text-[1.4vw]
     minitab:text-[16.8px]
     text-[14.4px] `
 }

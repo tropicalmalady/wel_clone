@@ -10,7 +10,9 @@ import { OvalElementProps } from '../components/builder/ovalElement/index';
 import { useEffectOnce } from "../hooks";
 import PopupCardSix from "../components/builder/card/popupCard/v6";
 import OverviewHeading from "../components/view/overview/heading";
-import Chipmarquee from "../components/builder/chipmarquee";
+import Chipmarquee from "../components/builder/chip/chipmarquee";
+import CryptoSection from "../components/view/crypto";
+import OverviewDesktop from "../components/view/overview/layoutDesktop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,6 +103,8 @@ export default function () {
       
       <div className="h-[700vh] mb-[50rem]  ">
       <OverviewHeading/>
+      <OverviewDesktop/>
+      <CryptoSection/>
       </div>
    </div>
 

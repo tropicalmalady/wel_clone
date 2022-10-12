@@ -14,7 +14,11 @@ export function OverviewScreenshot()
 {
   return <div>
     <div className="relative">
-    <img src={Images.Landing.splash.src} className="absolute left-[0] bottom-[0]"/>
+      <div className="desktop:w-[5vw] desktop:h-[5vw] absolute left-[0] bottom-[0]">
+    <img src={Images.Landing.splash.src} className=" w-[100%] h-[100%]"/>
+    </div>
+
+
     <div className={style.imageWrapper}>
       <img src={Images.Landing.screenshot.src} alt="screenshot" placeholder="blur" className="w-[100%] h-[100%]"/>
       {/* <Image src={Images.Landing.screenshot} alt="screenshot" placeholder="blur" className="w-[100%] h-[100%]"/> */}

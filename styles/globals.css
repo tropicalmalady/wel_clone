@@ -65,7 +65,17 @@
 
     .giveborder
     {
-        @apply border-[1px] border-[red]
+        @apply border-[0px] border-[red]
+    }
+
+    .givecenter
+    {
+        @apply flex justify-center items-center min-h-[100vh]
+    }
+    
+    .givelayout
+    {
+        @apply px-[20px] mx-[auto] desktop:max-w-[100%] minitab:px-[80px] laptop:px-[100px] laptop:max-w-[1400px] desktop:px-[12vw]  
     }
 
     body{
@@ -84,9 +94,6 @@
     {
         @apply desktop:text-[26px] minitab:text-[22px] text-[18px]
     }
-
-    
-
 
 }
 
@@ -139,7 +146,33 @@
 
 
 
+.example::-webkit-scrollbar-thumb {
+    background-color: #01326b;
+    border-radius: 8px;
+    width: 10vw;
+    display:none;
 
+}
+
+.example::-webkit-scrollbar {
+    background-color:grey;
+    height: 3px;
+    display:none;
+}
+
+
+/* .example::-webkit-scrollbar-thumb
+{
+    height:3;
+}
+
+
+.example::-webkit-scrollbar-track
+{
+    height:3;
+
+}
+ */
 
 
 
