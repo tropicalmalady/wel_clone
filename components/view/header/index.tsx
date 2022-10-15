@@ -1,15 +1,12 @@
 import { LinkBuilder, LinkBuilderInterface, LinkBuilderModel } from "../../builder/link";
 import LogoSvg from "./svgLogo";
-import { motion } from 'framer-motion';
 import { useState } from "react";
-
 
 export default function  Header () {
   return <header>
         <Navbar />
          </header>
 }
-
 
 const headerNavData: LinkBuilderInterface[] = [
   LinkBuilderModel({ child: <LogoSvg />, style: "navbar-logo" }),
@@ -26,7 +23,6 @@ function Navbar() {
           {headerNavData.map((item: LinkBuilderInterface, index: number) => <li key={index} ><LinkBuilder linkBuilderData={item} /></li>)}
         </ul>
 
-
          <div className="navbar-action ">
           <HeaderDownloadButton/>
          </div>
@@ -41,8 +37,7 @@ function HeaderDownloadButton()
     const [hasMouseEntered, setHasMouseEntered] = useState(false);
 
   return     <button className="btn-nav " onPointerOver={() => setHasMouseEntered(true)} onPointerOut={() => setHasMouseEntered(false)}>
-         <motion.div className="btn-nav-bg"  transition={{type:"spring",bounce:0.6}}
-     animate={hasMouseEntered ?{scaleX:1.05}:{}}></motion.div>
+         <div className="btn-nav-bg"></div>
          <span className=""> Download</span>
             </button>
             

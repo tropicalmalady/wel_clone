@@ -19,7 +19,7 @@ const style = {
     desktop:px-[120px] desktop:max-w-[1600px] desktop:h-[calc(100vh-8rem)]
     laptop:max-w-[1400px] laptop:px-[100px] laptop:h-[calc(100vh-8rem)]
     minitab:px-[80px] 
-    p-[20px]  border-[blue] m-auto `,
+    p-[20px] border-[blue] m-auto `,
 
     flex: `
     laptop:h-[100%] 
@@ -40,7 +40,6 @@ export default function FeatureCard({ props }: { props: FeatureCardProps }) {
         <div className={style.wrapper}>
             <div className={style.container}>
                 <div className={style.flex}>
-
                     <div className={style.layoutOne}>
                         <FeatureCardText props={props.cardText} />
                     </div>

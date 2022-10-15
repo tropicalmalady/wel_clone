@@ -11,6 +11,7 @@ const primaryColors={
   purple500:"#9597f8",
   purple600:"#7e84e6",
   purple700:"#0b1e5b",
+  purple700_2:"rgba(11,30,91,0.5)",
 
   green100:"#b9db62",
   green200:"#8caf31",

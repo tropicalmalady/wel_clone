@@ -63,9 +63,23 @@
         font-weight:650;
     }
 
+    html
+    {
+     @apply desktop:text-[1.67vw]
+            laptop:text-[22px]
+            tab:text-[20px]
+            minitab:text-[18px]
+            text-[16px] font-[250]
+    }
+
+    body
+    {
+      @apply text-primaryColors-purple700 bg-primaryColors-cream100    
+    }
+
     .giveborder
     {
-        @apply border-[0px] border-[red]
+        @apply border-[1px] border-[red]
     }
 
     .givecenter
@@ -75,8 +89,11 @@
     
     .givelayout
     {
-        @apply px-[20px] mx-[auto] desktop:max-w-[100%] minitab:px-[80px] laptop:px-[100px] laptop:max-w-[1400px] desktop:px-[12vw]  
-    }
+        @apply  desktop:max-w-[100%] desktop:px-[12vw]  
+                laptop:px-[100px] laptop:max-w-[1400px]
+                minitab:px-[80px]
+                px-[20px] mx-[auto]
+    } 
 
     body{
         @apply font-Twk text-[14px]
@@ -89,12 +106,6 @@
     .popup-card__dark{
         @apply p-[16px] mobile:p-[10px] bg-secondaryColors-fadedPurple rounded-[12px] relative z-[100] text-primaryColors-cream100
     }
-
-    .text-one
-    {
-        @apply desktop:text-[26px] minitab:text-[22px] text-[18px]
-    }
-
 }
 
 .popup-card
@@ -189,15 +200,6 @@
 ::-webkit-scrollbar {
    display: none;
 } */
-
-
-
-body {
-    background: #f7f8f2;
-    color: #0b1e5b;
-}
-
-
 
 
 
