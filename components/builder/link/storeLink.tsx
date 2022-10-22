@@ -14,19 +14,19 @@ const style = {
     text-[18px] ${isDarkmode ? "text-primaryColors-cream100" : "text-primaryColors-purple700"}`,
 
     textWrapper: (isDarkmode: boolean) => `
-    desktop:leading-[1.4vw]
-    minitab:leading-[16.8px] 
-    leading-[14px] ${isDarkmode ? "text-primaryColors-cream100" : "text-primaryColors-purple700"} text-left`,
+    desktop:leading-[1vw]
+    minitab:leading-[15px] 
+    leading-[14px] ${isDarkmode ? "text-primaryColors-cream100" : "text-primaryColors-purple700"} text-left font-[400]`,
 
     textOne: `
-    desktop:text-[1.1vw]
+    desktop:text-[0.9vw]
     minitab:text-[14px]
     text-[12px] opacity-[0.5]`,
 
     textTwo: `
-    desktop:text-[1.4vw]
-    minitab:text-[16.8px]
-    text-[14.4px] `
+    desktop:text-[1.1vw]
+    minitab:text-[16px]
+    text-[14px]`
 }
 
 
@@ -69,7 +69,7 @@ export function GoogleStoreLink({ props }: { props?: GooglePlayAppStoreLinkProps
             icon: <FaGooglePlay />,
             isDarkmode: props?.isDarkmode,
             rippleComponent: props?.rippleComponent,
-            textOne: "Get it on",
+            textOne: "Get on the",
             textTwo: "Google Play",
             href: props?.href
         }
@@ -82,7 +82,7 @@ export function AppStoreLink({ props }: { props?: GooglePlayAppStoreLinkProps })
             icon: <BsApple />,
             isDarkmode: props?.isDarkmode,
             rippleComponent: props?.rippleComponent,
-            textOne: "Get it on",
+            textOne: "Get on the",
             textTwo: "App Store",
             href: props?.href
         }

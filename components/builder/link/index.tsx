@@ -1,21 +1,21 @@
 import Link, { LinkProps } from "next/link";
 
-export interface LinkBuilderInterface
+export interface linkProps
 {
     href?:any,
     child:string | JSX.Element,
     style?:string,
 }
 
-export function LinkBuilderModel({href="/",child,style="/"}:LinkBuilderInterface)
+export function linkModel({href="/",child,style="/"}:linkProps)
 {
    return {href,child,style};
 }
 
-export function LinkBuilder({ linkBuilderData }:{linkBuilderData:LinkBuilderInterface}) {
+export function LinkBuilder({ props }:{props:linkProps}) {
   return (
-    <Link href={linkBuilderData.href}>
-      <a className={"block "+linkBuilderData.style}>{linkBuilderData.child}</a>
+    <Link href={props.href}>
+      <a className={"block "+props.style}>{props.child}</a>
     </Link>
   );
   }

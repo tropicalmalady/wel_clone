@@ -74,7 +74,7 @@
 
     body
     {
-      @apply text-primaryColors-purple700 bg-primaryColors-cream100    
+      @apply text-primaryColors-purple700 bg-primaryColors-cream100  font-Twk   
     }
 
     .giveborder
@@ -95,16 +95,16 @@
                 px-[20px] mx-[auto]
     } 
 
-    body{
-        @apply font-Twk text-[14px]
-    }
-
     .popup-card{
-        @apply p-[16px] mobile:p-[10px] bg-primaryColors-cream100 rounded-[12px] relative z-[100]
+        @apply desktop:p-[1vw] desktop:rounded-[1vw]
+               minitab:p-[16px] 
+               p-[10px] bg-primaryColors-cream100 rounded-[12px] relative z-[10]
     }
 
     .popup-card__dark{
-        @apply p-[16px] mobile:p-[10px] bg-secondaryColors-fadedPurple rounded-[12px] relative z-[100] text-primaryColors-cream100
+        @apply desktop:p-[1.33vw] desktop:rounded-[1vw]
+               minitab:p-[16px] 
+               p-[10px] bg-secondaryColors-fadedPurple rounded-[12px] relative z-[10] text-primaryColors-cream100
     }
 }
 
@@ -113,29 +113,54 @@
     box-shadow:rgba(53,49,72,0.09) 0px 3px 11px 0px;
 }
 
+.btn__nav--bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../public/images/landing/btn-nav.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 
+.overview__track
+{
+  scrollbar-width: none;
+}
 
+.overview__track::-webkit-scrollbar
+{
+    display: none;
+}
 
+.dropdown__container:hover .dropdown__arrow
+{
+transform: rotate(180deg);
+}
 
+.dropdown__container:hover .dropdown__card
+{
+    display:block
+}
 
+::-webkit-scrollbar-thumb {
+    background-color: rgb(183, 189, 198);
+    border-radius: 8px;
+}
 
+::-webkit-scrollbar {
+    background-color: rgb(255, 255, 255);
+    width: 8px;
+    height: 10px;
+}
 
+/* *{
+   border:1px solid red;
+} */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 
 .ripple
 {
     transition: transform .45s,opacity .3s;
@@ -154,35 +179,6 @@
    border-radius: 50%;
    background: #eff1e5;
 }
-
-
-
-.example::-webkit-scrollbar-thumb {
-    background-color: #01326b;
-    border-radius: 8px;
-    width: 10vw;
-    display:none;
-
-}
-
-.example::-webkit-scrollbar {
-    background-color:grey;
-    height: 3px;
-    display:none;
-}
-
-
-/* .example::-webkit-scrollbar-thumb
-{
-    height:3;
-}
-
-
-.example::-webkit-scrollbar-track
-{
-    height:3;
-
-}
  */
 
 
@@ -190,291 +186,6 @@
 
 
 
-
-
-
-/* ::-webkit-scrollbar-thumb {
-   display:none
-}
-
-::-webkit-scrollbar {
-   display: none;
-} */
-
-
-
-
-.navbar-container
-{
-    padding: 0px 20px;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    max-width: 100%;
-}
-
-
-
-
-
-
-@media (min-width: 768px)
-{
-    .navbar-container
-    {
-        padding: 25px 80px 0px;
-    } 
-}
-
-@media (min-width: 1200px)
-{
-    .navbar-container
-    {
-      margin:auto;
-      max-width: 1200px;
-    } 
-}
-
-@media (min-width: 1400px)
-{
-    .navbar-container
-    {
-        padding: 25px 100px 0px;
-        max-width: 1400px;
-    } 
-}
-
-
-@media (min-width: 1600px)
-{
-    .navbar-container
-    {
-        padding: 25px 120px 0px;
-        max-width: 1600px;
-    } 
-}
-
-.navbar-container
-{
-    max-width: 100%;
-}
-
-
-
-.navbar-logo {
-    display: inline-block;
-    position: relative;
-    top: -2px;
-    width: 70px;
-    height: 22px;
-    vertical-align: middle;
-}
-
-@media (min-width: 1200px)
-{
-.navbar-logo {
-    width: 90px;
-    height: 26px;
-}
-}
-
-@media (min-width: 768px){
-.navbar-logo {
-    margin-right: 50px;
-}
-}
-
-@media (min-width: 768px){
-.navbar-logo {
-    width: 80px;
-    height: 23px;
-}
-}
-
-.navbar-nav {
-    display: block;
-    margin: 0 0 40px;
-    font-size: 32px;
-    letter-spacing: .02em;
-    font-weight: 400;
-    text-decoration: none;
-    overflow: hidden;
-}
-
-@media (min-width: 768px){
-.navbar-nav {
- 
-    display: inline-block;
-    padding: 0 25px;
-    margin: 0;
-    font-size: 16px;
-    vertical-align: bottom;
-}
-}
-
-
-.btn-nav
-{
-    cursor:pointer;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: 149px;
-    height: 55px;
-    font-size: 16px;
-    letter-spacing: .02em;
-    position: relative;
-
-  
-}
-
-
-
-
-
-
-.btn-nav-bg {
-    position: absolute;
- 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(../public/images/landing/btn-nav.svg);
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-
-}
-
-.navbar-action {
-    display: none;
-}
-
-
-@media (min-width: 768px){
-.navbar-action {
-    display: inline-block;
-    vertical-align: middle;
-}
-}
-
-
-@media (min-width: 1600px){
-.introduction {
-    padding: 200px 0 170px;
-}}
-@media (min-width: 1200px){
-.introduction {
-    padding: 165px 0 170px;
-}}
-@media (min-width: 1024px){
-.introduction {
-    padding: 140px 0 200px;
-    text-align: left;
-}}
-@media (min-width: 768px){
-.introduction {
-    text-align: center;
-}}
-.introduction {
-    padding: 90px 0 30px;
-}
-
-@media (min-width: 1600px){
-.intro-container
-{
-    padding: 0 120px;
-    max-width: 1600px;
-}}
-
-@media (min-width: 1400px){
-.intro-container{
-    padding: 0 100px;
-    max-width: 1400px;
-}}
-@media (min-width: 1200px){
-.intro-container{
-    max-width: 1200px;
-    margin: 0 auto;
-}}
-@media (min-width: 768px){
-.intro-container{
-    padding: 0 120px;
-}}
-
-.intro-container{
-    padding: 0 20px;
-    border:1px solid red;
-}
-
-
-
-@media (min-width: 1600px){
-.introduction h1 {
-    font-size: 72px;
-    /* line-height: 102%; */
-}}
-@media (min-width: 1200px){
-.introduction h1 {
-    font-size: 60px;
-    /* line-height: 122%; */
-}}
-@media (min-width: 768px){
-.introduction h1 {
-    font-size: 52.8px;
-    /* line-height: 140%; */
-}}
-.introduction  {
-    font-family: "Museo_Slab",sans-serif;
-    font-weight: 300;
-    font-size: 33.6px;
-    /* line-height: 120%; */
-    margin:0;
-    padding:0
-}
-
-
-
-
-
-
-
-/* @media (min-width: 1600px){
-.text-content-body{
-    font-size: 26px;
-    
-}}
-@media (min-width: 1200px){
-.text-content-body
- {
-    padding: 24px 0 0;
-}}
-@media (min-width: 1024px){
-.text-content-body
- {
-    padding: 20px 0 0;
-    margin: 0;
-}}
-@media (min-width: 768px){
-.text-content-body
- {
-    max-width: 410px;
-    margin: 0 auto;
-    font-size: 22px;
-  
-}}
-.text-content-body
- {
-    
-    padding: 15px 0 0;
-    font-size: 18px;
-     border:1px solid blue;
-    font-weight: 250;
-}
-
-
- */
 
 
 

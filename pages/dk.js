@@ -21976,7 +21976,7 @@ and limitations under the License.
             e.contact = e.el.querySelector("[data-nav-contact]"),
             e.nav = e.el.querySelectorAll(".we-navbar-nav"),
             e.logo = e.el.querySelector(".we-navbar-logo"),
-            e.logoSvg = e.logo.querySelector("svg"),
+            e.WeltioLogo = e.logo.querySelector("svg"),
             e.dot = e.logo.querySelector("path:last-child"),
             e.opened = !1,
             e.bindToggle(),
@@ -22038,7 +22038,7 @@ and limitations under the License.
         ,
         n.clear = function() {
             this.el.style = "",
-            this.logoSvg.style = ""
+            this.WeltioLogo.style = ""
         }
         ,
         n.onEnter = function() {
@@ -26177,7 +26177,7 @@ and limitations under the License.
                         duration: .15,
                         ease: "none"
                     }, .2),
-                    t.to(this.navbar.logoSvg, {
+                    t.to(this.navbar.WeltioLogo, {
                         fill: "rgb(222, 229, 251)",
                         duration: .15,
                         ease: "none"
@@ -26192,7 +26192,7 @@ and limitations under the License.
                         duration: .15,
                         ease: "none"
                     }, .75),
-                    t.to(this.navbar.logoSvg, {
+                    t.to(this.navbar.WeltioLogo, {
                         fill: "rgb(11, 30, 91)",
                         duration: .15,
                         ease: "none"

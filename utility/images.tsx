@@ -38,11 +38,17 @@ import righthand from "/public/images/landing/contact/righthand.png";
 import legs from "/public/images/landing/contact/legs.png";
 import question from "/public/images/landing/contact/question.png";
 
+import money from "/public/images/landing/intro/money.svg";
+import stats from "/public/images/landing/intro/stats.svg";
+import swingVid from "/public/images/landing/intro/swingVid.webp";
+import scrollVid from "/public/images/landing/intro/scrollVid.webp";
+import coins from "/public/images/landing/intro/coins.png";
+
 
 const Landing={
     featureCard1,featureCard2,featureCard3,popupCard2img1,popupCard2img2,popupCard4,popupCard6,handCue,signalCue,screenshot,splash,
     overview1,overview2,overview3,overview4,overview5,
-    screenshot1,screenshot2,screenshot3,screenshot4,screenshot5,screenshotBanner,bar,rocket,exhaust,head,body,lefthand,righthand,legs,question
+    screenshot1,screenshot2,screenshot3,screenshot4,screenshot5,screenshotBanner,bar,rocket,exhaust,head,body,lefthand,righthand,legs,question,money,stats,swingVid,scrollVid,coins
 }
 
 const Images={
