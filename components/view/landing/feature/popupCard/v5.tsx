@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import { AnimateTopFeatureCard } from "../../../../../utility/animations";
+
 const style = {
     top: ` 
     flex gap-[0.5rem] `,
@@ -7,7 +10,13 @@ const style = {
 }
 
 export default function PopupCardFive() {
-    return <div>
+    const cardRef=useRef<HTMLDivElement>(null);
+
+    useEffect(()=>{
+       AnimateTopFeatureCard(cardRef);
+    },[]);
+
+    return <div ref={cardRef}>
         <div className={style.top}>
             <CardItemOne />
             <CardItemTwo />

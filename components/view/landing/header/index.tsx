@@ -25,7 +25,6 @@ export default function Header() {
   }).to(coinDiv,{
     y:"-5vw"
   })
-
    },[])
 
 

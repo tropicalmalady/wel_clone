@@ -69,7 +69,7 @@
             laptop:text-[22px]
             tab:text-[20px]
             minitab:text-[18px]
-            text-[16px] font-[250]
+            text-[16px] font-[250] 
     }
 
     body
@@ -145,16 +145,7 @@ transform: rotate(180deg);
     display:block
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: rgb(183, 189, 198);
-    border-radius: 8px;
-}
 
-::-webkit-scrollbar {
-    background-color: rgb(255, 255, 255);
-    width: 8px;
-    height: 10px;
-}
 
 /* *{
    border:1px solid red;

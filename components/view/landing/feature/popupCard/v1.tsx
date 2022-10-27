@@ -1,3 +1,11 @@
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import gsap from "gsap";
+import { useRef, useEffect} from 'react';
+import { AnimateTopFeatureCard } from '../../../../../utility/animations';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 const style = {
     subtitle: `
     text-[0.4rem] uppercase font-[300] tracking-[0.06em]`,
@@ -13,7 +21,15 @@ const style = {
 }
 
 export function PopupCardOne() {
-    return <div className="popup-card pr-[1.5rem]">
+
+ const cardRef=useRef<HTMLDivElement>(null);
+
+ useEffect(()=>{
+    AnimateTopFeatureCard(cardRef);
+ },[]);
+
+
+    return <div className="popup-card pr-[1.5rem]" ref={cardRef}>
         <div className={style.subtitle}> ahorros</div>
         <div className={style.title}> $27,091.4 USD</div>
         <div className={style.buttonContainer}>
@@ -22,3 +38,4 @@ export function PopupCardOne() {
         </div>
     </div>
 }
+

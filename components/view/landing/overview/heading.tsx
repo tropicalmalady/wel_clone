@@ -11,9 +11,9 @@ const style = {
   imageWrapper: `
   desktop:w-[4rem] desktop:border-[0.125rem]
   laptop:top-[0.67rem]
-  minitab:max-w-[4rem] minitab:top-[0.5rem]
+  minitab:max-w-[4rem] minitab:top-[0.5rem] minitab:border-[1.5px] 
   mobile:max-w-[2.4rem] 
-  max-w-[2rem] relative tab-[0rem] border-[1.5px] rounded-[83%/60%]`,
+  max-w-[2rem] relative tab-[0rem] border-[1.5px] rounded-[83%/60%] border-[1px]`,
 
   textOne: `
   desktop:gap-[1.5rem] desktop:pr-[4rem]

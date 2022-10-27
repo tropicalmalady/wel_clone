@@ -9,8 +9,6 @@ export default function useMediaQuery(query: string): boolean {
     return false
   }
 
-  console.count("hmm");
-
   const [matches, setMatches] = useState<boolean>(getMatches(query))
 
   function handleChange() {

@@ -8,7 +8,7 @@ import gsap from "gsap";
 
 const style={
     container:(toggle:boolean)=>`
-    px-[20px] pt-[20px]  ${toggle ? "h-[100vh] bg-primaryColors-cream100":""}`,
+    px-[20px] pt-[20px] ${toggle ? "h-[100vh] bg-primaryColors-cream100":""}`,
 
     logo:`
     w-[4.5rem] h-[1.3rem] mr-[50px] inline-block align-middle `,
@@ -25,8 +25,8 @@ export default function MobileNav()
    
     useEffect(() => {
         toggle
-          ? (document.body.style.overflow = "hidden")
-          : (document.body.style.overflow = "scroll");
+          ? (document.body.style.overflowY = "hidden")
+          : (document.body.style.overflowY = "scroll");
       }, [toggle]);
 
  return <div className={style.container(toggle)} >

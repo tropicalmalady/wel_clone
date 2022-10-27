@@ -4,16 +4,17 @@ import { FeatureCardText, FeatureCardTextProps } from "./cardText";
 export interface FeatureCardProps {
     cardText: FeatureCardTextProps
     ovalResource: OvalElementProps,
-    popupCardOne: JSX.Element,
-    popupCardTwo: JSX.Element
+    popupCardOne?: JSX.Element,
+    popupCardTwo?: JSX.Element,
+    isCardCream?:boolean
 }
 
 const style = {
-    wrapper: `
+    wrapper:(isCardCream:boolean)=> `
     desktop:rounded-[4.67vw]
     laptop:mx-[1rem] laptop:my-[2rem]
     minitab:rounded-[56px]
-    overflow-hidden rounded-[24px] bg-primaryColors-purple200  `,
+    overflow-hidden rounded-[24px] ${isCardCream ?"bg-primaryColors-cream300":"bg-primaryColors-purple200" } `,
 
     container: `
     desktop:px-[10vw]
@@ -35,7 +36,7 @@ const style = {
 
 export default function FeatureCard({ props }: { props: FeatureCardProps }) {
     return <div className="feature__card laptop:mb-[0] mb-[2.5rem]">
-        <div className={style.wrapper}>
+        <div className={style.wrapper(!!props?.isCardCream)}>
             <div className={style.container}>
                 <div className={style.flex}>
                     <div className={style.layoutOne}>
@@ -44,8 +45,10 @@ export default function FeatureCard({ props }: { props: FeatureCardProps }) {
 
                     <div className={style.layoutTwo}>
                         <div className="inline-block relative">
+                             { props?.popupCardOne && props?.popupCardTwo &&   <>
                             <>{props.popupCardOne}</>
                             <>{props.popupCardTwo}</>
+                               </> }
                             <OvalElement props={props.ovalResource}/>
                         </div>
                     </div>

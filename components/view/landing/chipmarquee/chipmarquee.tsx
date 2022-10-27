@@ -1,4 +1,4 @@
-import { useEffect, useRef, Fragment } from "react";
+import { useEffect, useRef, Fragment, useState, useLayoutEffect } from 'react';
 import gsap from "gsap";
 
 export default function ChipMarqueeSection() {
@@ -14,21 +14,54 @@ export default function ChipMarqueeSection() {
 const repeatArray: string[] = ["Deposit", "Investment", "Earnings", "Savings"];
 const scrollChipsData: string[] = [...repeatArray, ...repeatArray, ...repeatArray, ...repeatArray]
 
+
+interface DimensionState
+{
+  viewportWidth:number,
+  scrollWidth:number,
+}
+
 function ScrollChipContainer() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [{viewportWidth,scrollWidth},setDimension]=useState<DimensionState>({
+    viewportWidth:0,
+    scrollWidth:0
+  });
+  const containerRef=useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const viewPortWidth = containerRef.current?.clientWidth!;
-    const scrollWidth = containerRef.current?.scrollWidth!
 
+  function handleResize()
+  {
+    setDimension({
+      viewportWidth:containerRef.current?.offsetWidth!,
+      scrollWidth:containerRef.current?.scrollWidth!   })
+  }
+
+
+  useLayoutEffect(() => {
+    handleResize();
+  }, []);
+
+
+  useLayoutEffect(()=>{
+
+    console.log(viewportWidth,scrollWidth)
+
+    gsap.set(containerRef.current,{
+     x:0
+    })
     gsap.to(containerRef.current, {
-      x: scrollWidth - 10 < viewPortWidth ? -1800 : viewPortWidth - scrollWidth,
+      x: viewportWidth - scrollWidth,
       duration: 20,
       repeatDelay: 0,
       repeat: -1,
       ease: "linear"
     })
-  }, []);
+  },[viewportWidth,scrollWidth])
+
+  useLayoutEffect(()=>{
+    window.addEventListener("resize",handleResize);
+    ()=>window.removeEventListener("resize",handleResize);
+  },[]);
 
   return <div className="flex" ref={containerRef}>
     {scrollChipsData.map((item, index) => <Fragment key={index}> <ScrollChip child={item} /></Fragment>)}

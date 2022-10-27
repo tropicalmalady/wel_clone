@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import { AnimateTopFeatureCard } from "../../../../../utility/animations";
+
 const style = {
     subtitle: `
     text-[0.4rem] font-Twk uppercase font-[300] tracking-[0.06em]`,
@@ -13,7 +16,14 @@ const style = {
 }
 
 export function PopupCardThree() {
-    return <div className="popup-card__dark">
+    const cardRef=useRef<HTMLDivElement>(null);
+
+    useEffect(()=>{
+       AnimateTopFeatureCard(cardRef);
+    },[])
+
+    
+    return <div className="popup-card__dark" ref={cardRef}>
         <div className={style.subtitle}> STOCKS PORTFOLIO</div>
         <div className={style.title}> $43,091.4 USD</div>
         <div className="text-[0.4rem] mt-[0.1rem] mb-[0.5rem]">

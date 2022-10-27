@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+import { AnimateBottomFeatureCard } from '../../../../../utility/animations';
 import Images from '../../../../../utility/images';
 
 const style = {
@@ -22,7 +24,14 @@ const style = {
 
 
 export function PopupCardTwo() {
-    return <div className={style.container}>
+    const cardRef=useRef<HTMLDivElement>(null);
+
+    useEffect(()=>{
+       AnimateBottomFeatureCard(cardRef);
+    },[])
+   
+
+    return <div className={style.container} ref={cardRef}>
         <div className={style.imageOne}>
             <img src={Images.Landing.popupCard2img1.src} className="w-[100%] h-[100%]" />
         </div>

@@ -11,14 +11,14 @@ import Footer from "../components/view/shared/footer";
 export default function()
 {
    return <>
-    <div><Nav/></div>
-    <div><Header/></div>
+     <div><Nav/></div>
+     <div><Header/></div>
     <div className="mt-[1rem] mb-[2rem]"><ChipMarqueeSection/></div>
     <div className="mb-[5rem]"><LandingFeatureCardsSection/></div>
     <div className="laptop:mb-[0rem] mb-[4rem]"><OverviewSection/></div>
     <div className="mb-[8rem]"><CryptoSection/></div>
     <div className="minitab:mb-[10rem] mobile:mb-[8rem]"><OfferSection/></div>
     <div className="mb-[4rem]"><ContactSection/></div>
-    <div><Footer/></div>
+    <div><Footer/></div> 
     </> 
 }

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useLayoutEffect } from 'react';
 import useGlobalStore from "../../../stores";
 import { FeatureCardProps } from "./featureCard";
 import FeatuerCardCounter from "./featureCard/counter";
@@ -13,7 +13,7 @@ export default function FeatureCards({props}:{props:FeatureCardProps[]}) {
    const innerRef = useRef<HTMLDivElement>(null);
    const [activeIndex,setActiveIndex]=useGlobalStore(state=>[state.landingFeatureCardCounterState.index,state.landingFeatureCardCounterState.setIndex])
 
-   useEffect(() => {
+   useLayoutEffect(() => {
       const q = gsap.utils.selector(containerRef);
       const cardDivs = q(".feature__card");
       const mm=gsap.matchMedia();
@@ -26,7 +26,6 @@ export default function FeatureCards({props}:{props:FeatureCardProps[]}) {
                end: () => `top+=${innerRef.current?.scrollHeight} bottom`,
                scrub: true,
                pin: true,
-               invalidateOnRefresh: true,
             }
          });
    
@@ -61,11 +60,12 @@ export default function FeatureCards({props}:{props:FeatureCardProps[]}) {
  
 
    return <div>
-      <div className="laptop:h-[100vh] min-h-[700px] overflow-hidden relative" ref={containerRef}>
+      <div className="laptop:h-[100vh] min-h-[700px] overflow-hidden relative " ref={containerRef}>
          <div ref={innerRef} >
             <div className="absolute left-[4%] top-[50%] z-[30] translate-y-[-50%] hidden laptop:block"> <FeatuerCardCounter props={{
                size:props.length,
-               activeIndex
+               activeIndex,
+               isCounterGreen:props[0].isCardCream
             }}/></div>
             <div>
                 {props.map((item,index)=><div key={index} style={{zIndex:1+index}}> <FeatureCard props={item} /></div>)}     

@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+import { AnimateBottomFeatureCard } from "../../../../../utility/animations";
 import Images from "../../../../../utility/images";
 
 const style = {
@@ -21,7 +23,13 @@ const style = {
 }
 
 export default function PopupCardSix() {
-    return <div className={style.container}>
+    const cardRef=useRef<HTMLDivElement>(null);
+
+    useEffect(()=>{
+       AnimateBottomFeatureCard(cardRef);
+    },[])
+
+    return <div className={style.container} ref={cardRef}>
         <div className="flex justify-between">
             <div className={style.subtitle}>
                 <span> ETF</span>

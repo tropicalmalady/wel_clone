@@ -1,6 +1,8 @@
 export interface FeatureCardTextProps {
-    heading: string;
-    content: string;
+    heading: string,
+    content: string,
+    headingStyle?:string,
+    contentStyle?:string
 }
 
 const featureCardTextStyle = {
@@ -22,10 +24,10 @@ const featureCardTextStyle = {
 export function FeatureCardText({ props }: { props: FeatureCardTextProps }) {
     return (
         <div className={featureCardTextStyle.container}>
-            <div className={featureCardTextStyle.titleContainer}>
+            <div className={`${featureCardTextStyle.titleContainer} ${props.headingStyle}`}>
                 <h2> {props.heading} </h2>
             </div>
-            <div className={featureCardTextStyle.contentContainer}>
+            <div className={`${featureCardTextStyle.contentContainer} ${props.contentStyle}`}>
                 <p> {props.content} </p>
             </div>
         </div>

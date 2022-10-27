@@ -44,15 +44,81 @@ import swingVid from "/public/images/landing/intro/swingVid.webp";
 import scrollVid from "/public/images/landing/intro/scrollVid.webp";
 import coins from "/public/images/landing/intro/coins.png";
 
+import banner from "/public/images/about/intro/banner.png";
 
-const Landing={
-    featureCard1,featureCard2,featureCard3,popupCard2img1,popupCard2img2,popupCard4,popupCard6,handCue,signalCue,screenshot,splash,
-    overview1,overview2,overview3,overview4,overview5,
-    screenshot1,screenshot2,screenshot3,screenshot4,screenshot5,screenshotBanner,bar,rocket,exhaust,head,body,lefthand,righthand,legs,question,money,stats,swingVid,scrollVid,coins
-}
+import hand from "/public/images/about/mission/hand.svg";
+import globe from "/public/images/about/mission/globe.svg";
+import stars from "/public/images/about/mission/stars.svg";
 
-const Images={
-    Landing
-}
+import staffOne from "/public/images/about/staff/staffOne.jpeg";
+import staffTwo from "/public/images/about/staff/staffTwo.jpeg";
+import staffThree from "/public/images/about/staff/staffThree.jpeg"
+
+import aboutFeatureImage1 from "/public/images/about/feature/aboutFeatureImage1.png";
+import aboutFeatureImage2 from "/public/images/about/feature/aboutFeatureImage2.png";
+import aboutFeatureImage3 from "/public/images/about/feature/aboutFeatureImage3.png";
+import aboutFeatureImage4 from "/public/images/about/feature/aboutFeatureImage4.png";
+import aboutFeatureImage5 from "/public/images/about/feature/aboutFeatureImage5.png";
+import aboutFeatureImage6 from "/public/images/about/feature/aboutFeatureImage6.png";
+
+const Landing = {
+  featureCard1,
+  featureCard2,
+  featureCard3,
+  popupCard2img1,
+  popupCard2img2,
+  popupCard4,
+  popupCard6,
+  handCue,
+  signalCue,
+  screenshot,
+  splash,
+  overview1,
+  overview2,
+  overview3,
+  overview4,
+  overview5,
+  screenshot1,
+  screenshot2,
+  screenshot3,
+  screenshot4,
+  screenshot5,
+  screenshotBanner,
+  bar,
+  rocket,
+  exhaust,
+  head,
+  body,
+  lefthand,
+  righthand,
+  legs,
+  question,
+  money,
+  stats,
+  swingVid,
+  scrollVid,
+  coins,
+};
+
+const About = {
+  banner,
+  hand,
+  globe,
+  stars,
+  staffOne,
+  staffTwo,
+  staffThree,
+  aboutFeatureImage1,
+  aboutFeatureImage2,
+  aboutFeatureImage3,
+  aboutFeatureImage4,
+  aboutFeatureImage5,
+  aboutFeatureImage6
+};
+
+const Images = {
+  Landing,
+  About,
+};
 
 export default Images;
