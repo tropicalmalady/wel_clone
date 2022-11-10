@@ -1,11 +1,7 @@
 import MobileNav from "./layout/mobile";
 import useMediaQuery from "../../../../hooks/useMediaQuery";
 import DesktopNav from "./layout/desktop";
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useState } from "react";
 
 export default function Nav() {
   const isNotMobile = useMediaQuery("(min-width: 768px)");
@@ -17,7 +13,7 @@ export default function Nav() {
 
 
   return (
-    <div>
+    <div className="nav">
       {hasMounted ? isNotMobile ? <DesktopNav /> : <MobileNav /> : <></>}
     </div>
   );

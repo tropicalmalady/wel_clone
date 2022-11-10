@@ -62,7 +62,7 @@ export default function DesktopNav() {
   useEffect(() => {}, []);
 
   return <nav>
-    <div className="fixed left-0 right-0 z-[100] nav" ref={navBarRef} >
+    <div className="fixed left-0 right-0 z-[100] " ref={navBarRef} >
     <div className={style.navbarContainer}>
       <div className="flex justify-between items-center">
         <ul className="flex">
