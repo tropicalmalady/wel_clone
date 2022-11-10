@@ -31,7 +31,10 @@ export default function MobileNav()
 
  return <div className={style.container(toggle)} >
     <div className="flex">
-       <div className={style.logo}> <WeltioLogo/> </div>
+       <div className={style.logo}> 
+       <LinkBuilder props={linkModel({child:<WeltioLogo/>})}/>
+      
+       </div>
       {toggle &&  <LanguageDropdown/> }
        <div className="ml-[auto]">
     <Hamburger props={{
@@ -39,17 +42,17 @@ export default function MobileNav()
     }}/>
     </div> 
        </div>
-       {toggle && <NavLinks/>}
+       {toggle && <NavLinks handleToggle={handleToggle}/>}
        </div>
 }
 
 
   const navData: linkProps[] = [
-    linkModel({ child: "About" ,style:"nav__link" }),
-    linkModel({ child: "Contact",style:"nav__link" }),
-]
+    linkModel({ child: "About" ,style:"nav__link",href:"/about" }),
+    linkModel({ child: "Contact",style:"nav__link",href:"/#contact" }),
+];
   
-function NavLinks()
+function NavLinks({handleToggle}:{handleToggle:()=>void})
 {
     const navRef=useRef<HTMLDivElement>(null);
 
@@ -69,7 +72,11 @@ function NavLinks()
 
     return <div className="h-[100%] mt-[60px]" ref={navRef}>
          <ul >
-            {navData.map((item, index: number) =><li key={index} className={style.listStyle} ><LinkBuilder props={item} /></li>)}
+            {navData.map((item, index: number) =><li key={index} className={style.listStyle} onClick={()=>{
+               
+              document.body.style.overflowY = "scroll";
+              handleToggle();
+            }}><LinkBuilder props={item} /></li>)}
             </ul>
      </div>
 

@@ -12,7 +12,7 @@ const style={
 export default function StaffSection()
 {
     return <section >
-         <div className="givelayout mt-[6rem]">
+         <div className="givelayout mt-[6rem] mb-[4rem]">
      <div className={style.container}>
         <StaffIntro/>
         <StaffImages/>

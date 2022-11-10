@@ -15,6 +15,8 @@ export default function CryptoSection()
     const q=gsap.utils.selector(cryptoSectionRef);
     const cryptoChipDivs=q(".crypto__chip");
 
+    console.log(cryptoChipDivs);
+
     const tl= gsap.timeline({
         scrollTrigger: {
             trigger: cryptoSectionRef.current,
@@ -27,12 +29,12 @@ export default function CryptoSection()
     cryptoChipDivs.forEach((item)=>{
         tl.to(item,{
             y:"5vw"
-        },0.5)
+        },0)
     })
     },[]);
 
-    return <section>
-        <div className="givelayout" ref={cryptoSectionRef}>
+    return <section className='crypto'>
+        <div className="givelayout mb-[8rem]" ref={cryptoSectionRef}>
             <div className='relative pt-[4em] laptop:pt-[12em] minitab:pt-[8rem] desktop:pt-[12vw]'>
                 <CryptoChip1 position='top-[0%] minitab:left-[35%] left-[85%]'/>
                 <CryptoChip2 position='minitab:top-[35%] left-[23%] top-[50%] minimobile:top-[55%]'/>

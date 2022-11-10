@@ -31,8 +31,8 @@ const style={
 
 const headerNavData: linkProps[] = [
   linkModel({ child: <WeltioLogo />, style: style.navbarLogo }),
-  linkModel({ child: "About", style: style.navbarText }),
-  linkModel({ child: "Contact", style: style.navbarText }),
+  linkModel({ child: "About", style: style.navbarText,href:"/about" }),
+  linkModel({ child: "Contact", style: style.navbarText ,href:"#contact"}),
 ]
 
 export default function DesktopNav() {

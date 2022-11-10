@@ -1,4 +1,4 @@
-import { useEffect, useRef, Fragment, useState, useLayoutEffect } from 'react';
+import { useEffect, useRef, Fragment, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 
 export default function ChipMarqueeSection() {
@@ -12,66 +12,76 @@ export default function ChipMarqueeSection() {
 }
 
 const repeatArray: string[] = ["Deposit", "Investment", "Earnings", "Savings"];
-const scrollChipsData: string[] = [...repeatArray, ...repeatArray, ...repeatArray, ...repeatArray]
+const scrollChipsData: string[] = [
+  ...repeatArray,
+  ...repeatArray,
+  ...repeatArray,
+  ...repeatArray,
+];
 
-
-interface DimensionState
-{
-  viewportWidth:number,
-  scrollWidth:number,
+interface DimensionState {
+  viewportWidth: number;
+  scrollWidth: number;
 }
 
 function ScrollChipContainer() {
-  const [{viewportWidth,scrollWidth},setDimension]=useState<DimensionState>({
-    viewportWidth:0,
-    scrollWidth:0
-  });
-  const containerRef=useRef<HTMLDivElement>(null);
+  const [{ viewportWidth, scrollWidth }, setDimension] =
+    useState<DimensionState>({
+      viewportWidth: 0,
+      scrollWidth: 0,
+    });
+  const containerRef = useRef<HTMLDivElement>(null);
 
-
-  function handleResize()
-  {
+  function handleResize() {
     setDimension({
-      viewportWidth:containerRef.current?.offsetWidth!,
-      scrollWidth:containerRef.current?.scrollWidth!   })
+      viewportWidth: containerRef.current?.offsetWidth!,
+      scrollWidth: containerRef.current?.scrollWidth!,
+    });
   }
-
 
   useLayoutEffect(() => {
     handleResize();
   }, []);
 
+  useLayoutEffect(() => {
+    console.log(viewportWidth, scrollWidth);
 
-  useLayoutEffect(()=>{
-
-    console.log(viewportWidth,scrollWidth)
-
-    gsap.set(containerRef.current,{
-     x:0
-    })
+    gsap.set(containerRef.current, {
+      x: 0,
+    });
     gsap.to(containerRef.current, {
       x: viewportWidth - scrollWidth,
       duration: 20,
       repeatDelay: 0,
       repeat: -1,
-      ease: "linear"
-    })
-  },[viewportWidth,scrollWidth])
+      ease: "linear",
+    });
+  }, [viewportWidth, scrollWidth]);
 
-  useLayoutEffect(()=>{
-    window.addEventListener("resize",handleResize);
-    ()=>window.removeEventListener("resize",handleResize);
-  },[]);
+  useLayoutEffect(() => {
+    window.addEventListener("resize", handleResize);
+    () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  return <div className="flex" ref={containerRef}>
-    {scrollChipsData.map((item, index) => <Fragment key={index}> <ScrollChip child={item} /></Fragment>)}
-  </div>
+  return (
+    <div className="flex" ref={containerRef}>
+      {scrollChipsData.map((item, index) => (
+        <Fragment key={index}>
+          <ScrollChip child={item} />
+        </Fragment>
+      ))}
+    </div>
+  );
 }
 
 function ScrollChip({ child }: { child: string }) {
-  return <div className=" 
+  return (
+    <div
+      className=" 
    minitab:text-[1.8rem] minitab:px-[1.5rem] minitab:py-[0.7rem] 
- bg-primaryColors-purple200 text-[1rem] px-[1rem] py-[0.6rem] rounded-[1.8rem] font-[350]">
-    {child}
-  </div>
+ bg-primaryColors-purple200 text-[1rem] px-[1rem] py-[0.6rem] rounded-[1.8rem] font-[350] mt-[1rem] mb-[2rem]"
+    >
+      {child}
+    </div>
+  );
 }

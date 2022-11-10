@@ -52,7 +52,7 @@ import stars from "/public/images/about/mission/stars.svg";
 
 import staffOne from "/public/images/about/staff/staffOne.jpeg";
 import staffTwo from "/public/images/about/staff/staffTwo.jpeg";
-import staffThree from "/public/images/about/staff/staffThree.jpeg"
+import staffThree from "/public/images/about/staff/staffThree.jpeg";
 
 import aboutFeatureImage1 from "/public/images/about/feature/aboutFeatureImage1.png";
 import aboutFeatureImage2 from "/public/images/about/feature/aboutFeatureImage2.png";
@@ -113,7 +113,7 @@ const About = {
   aboutFeatureImage3,
   aboutFeatureImage4,
   aboutFeatureImage5,
-  aboutFeatureImage6
+  aboutFeatureImage6,
 };
 
 const Images = {

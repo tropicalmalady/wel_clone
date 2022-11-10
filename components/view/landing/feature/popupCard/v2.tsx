@@ -1,44 +1,49 @@
-import { useEffect, useRef } from 'react';
-import { AnimateBottomFeatureCard } from '../../../../../utility/animations';
-import Images from '../../../../../utility/images';
+import { useEffect, useRef } from "react";
+import { AnimateBottomPopupCard } from "../../../../../utility/animations";
+import Images from "../../../../../utility/images";
 
 const style = {
-    container: `
+  container: `
      desktop:min-w-[11.5vw]
      laptop:min-w-[138px]
      minitab:min-w-[116px]
      min-w-[105px] popup-card`,
 
-    imageOne: `
+  imageOne: `
      desktop:max-w-[1.91vw]
      laptop:max-w-[23px]
      minitab:max-w-[20px]
      max-w-[17px] ml-[auto]`,
 
-    imageTwo: `
+  imageTwo: `
      desktop:max-w-[5.58vw]
      laptop:max-w-[67px]
      minitab:max-w-[57px]
      max-w-[51px]`,
-}
-
+};
 
 export function PopupCardTwo() {
-    const cardRef=useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-    useEffect(()=>{
-       AnimateBottomFeatureCard(cardRef);
-    },[])
-   
+  useEffect(() => {
+    AnimateBottomPopupCard(cardRef);
+  }, []);
 
-    return <div className={style.container} ref={cardRef}>
-        <div className={style.imageOne}>
-            <img src={Images.Landing.popupCard2img1.src} className="w-[100%] h-[100%]" />
-        </div>
+  return (
+    <div className={style.container} ref={cardRef}>
+      <div className={style.imageOne}>
+        <img
+          src={Images.Landing.popupCard2img1.src}
+          className="w-[100%] h-[100%]"
+        />
+      </div>
 
-        <div className={style.imageTwo}>
-            <img src={Images.Landing.popupCard2img2.src} className="w-[100%] h-[100%]" />
-        </div>
+      <div className={style.imageTwo}>
+        <img
+          src={Images.Landing.popupCard2img2.src}
+          className="w-[100%] h-[100%]"
+        />
+      </div>
     </div>
+  );
 }
-

@@ -12,12 +12,12 @@ export default function WeltioLogo() {
     duration:.5,
     y:-20,
     ease:"sine.in"
-   },0).to(pathRef.current,{
-    scaleY: 1.2,
-    scaleX: .72,
-    ease:"sine.in",
-    duration:.5
-   },0).
+   }).to(pathRef.current,{
+    scaleY: 1.1,
+    scaleX: .7,
+    ease:"sine.out",
+    duration:0.8
+   },0.3).
 to(pathRef.current,{
     y:0,
     scaleY:1,
@@ -25,14 +25,7 @@ to(pathRef.current,{
    })
   }
 
-  function handleHoverOut()
-  {
-  gsap.to(".circle",{
-    y:0,
-    duration:-1
-  })
-  }
-  
+
     return <div onMouseEnter={handleHoverIn}  >
   
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 27" style={{ fill: "rgb(11, 30, 91)" }} >

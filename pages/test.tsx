@@ -1,12 +1,10 @@
-import Check from '../components/view/about/staff/index';
-import MissionSection from '../components/view/about/mission/index';
-import StaffSection from '../components/view/about/staff/index';
-import AboutFeatureCardsSection from '../components/view/about/feature';
-export default function()
+const style=`
+laptop:text-[0.6rem] laptop:px-[0.6rem] laptop:py-[0.3rem]
+bg-primaryColors-cream100 text-primaryColors-purple600 text-[0.9rem] px-[0.8rem] py-[0.4rem] rounded-[1.2rem] giveborder`
+
+export default function OverviewChip({text}:{text:string})
 {
-  return <>
-   <MissionSection/>
-   <StaffSection/>
-   <AboutFeatureCardsSection/>
-  </>
+    return <span className={style}>
+      {text}
+        </span>
 }

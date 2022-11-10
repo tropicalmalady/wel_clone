@@ -1,5 +1,4 @@
 import { useRef, useEffect, useLayoutEffect } from 'react';
-import useGlobalStore from "../../../stores";
 import { FeatureCardProps } from "./featureCard";
 import FeatuerCardCounter from "./featureCard/counter";
 import FeatureCard from './featureCard';
@@ -8,15 +7,25 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function FeatureCards({props}:{props:FeatureCardProps[]}) {
+interface FeatureCardsProps{
+cards:FeatureCardProps[],
+activeIndex:number,
+setActiveIndex(value:number):void,
+chipTextOne:string,
+chipTextTwo:string
+}
+
+export default function FeatureCards({props}:{props:FeatureCardsProps}) {
    const containerRef = useRef<HTMLDivElement>(null);
    const innerRef = useRef<HTMLDivElement>(null);
-   const [activeIndex,setActiveIndex]=useGlobalStore(state=>[state.landingFeatureCardCounterState.index,state.landingFeatureCardCounterState.setIndex])
+    const {cards,activeIndex,setActiveIndex,chipTextOne,chipTextTwo}=props;
+ 
 
    useLayoutEffect(() => {
       const q = gsap.utils.selector(containerRef);
       const cardDivs = q(".feature__card");
       const mm=gsap.matchMedia();
+      
 
       mm.add("(min-width: 1200px",()=>{
          const tl = gsap.timeline({
@@ -58,17 +67,16 @@ export default function FeatureCards({props}:{props:FeatureCardProps[]}) {
    },[])
 
  
-
    return <div>
       <div className="laptop:h-[100vh] min-h-[700px] overflow-hidden relative " ref={containerRef}>
          <div ref={innerRef} >
             <div className="absolute left-[4%] top-[50%] z-[30] translate-y-[-50%] hidden laptop:block"> <FeatuerCardCounter props={{
-               size:props.length,
+               size:cards.length,
                activeIndex,
-               isCounterGreen:props[0].isCardCream
+               isCounterGreen:cards[0].isCardCream
             }}/></div>
             <div>
-                {props.map((item,index)=><div key={index} style={{zIndex:1+index}}> <FeatureCard props={item} /></div>)}     
+                {cards.map((item,index)=><div key={index} style={{zIndex:1+index}}> <FeatureCard props={{...item,chipTextOne,chipTextTwo}} /></div>)}     
             </div>
          </div>
       </div>

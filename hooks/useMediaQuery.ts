@@ -1,43 +1,57 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export default function useMediaQuery(query: string): boolean {
   const getMatches = (query: string): boolean => {
-    // Prevents SSR issues
-    if (typeof window !== 'undefined') {
-      return window.matchMedia(query).matches
-    }
-    return false
-  }
 
-  const [matches, setMatches] = useState<boolean>(getMatches(query))
+    if (typeof window !== "undefined") {
+      return window.matchMedia(query).matches;
+    }
+    return false;
+  };
+
+  const [matches, setMatches] = useState<boolean>(getMatches(query));
 
   function handleChange() {
-    setMatches(getMatches(query))
+    setMatches(getMatches(query));
   }
 
   useEffect(() => {
-    const matchMedia = window.matchMedia(query)
+    const matchMedia = window.matchMedia(query);
 
-    // Triggered at the first client-side load and if query changes
-    handleChange()
 
-    // Listen matchMedia
+    handleChange();
+
     if (matchMedia.addListener) {
-      matchMedia.addListener(handleChange)
+      matchMedia.addListener(handleChange);
     } else {
-      matchMedia.addEventListener('change', handleChange)
+      matchMedia.addEventListener("change", handleChange);
     }
 
     return () => {
       if (matchMedia.removeListener) {
-        matchMedia.removeListener(handleChange)
+        matchMedia.removeListener(handleChange);
       } else {
-        matchMedia.removeEventListener('change', handleChange)
+        matchMedia.removeEventListener("change", handleChange);
       }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query])
+    };
+  }, [query]);
 
-  return matches
+  return matches;
 }
 
+export const useIsMobile = (): boolean => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useLayoutEffect(() => {
+    const updateSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize',updateSize);
+    return (): void => window.removeEventListener('resize', updateSize);
+  }, []);
+  
+  return isMobile;
+  };
+  
+  
+  

@@ -16,7 +16,9 @@ export default function OverviewSection()
 
 
   return <section>
-        <OverviewHeading/>
+      
    {hasMounted?isNotMobile? <OverviewDesktop/> : <OverviewMobile/> : <></>}
+
    </section>  
 }
+

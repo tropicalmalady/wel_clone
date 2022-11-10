@@ -1,5 +1,11 @@
 import Image from "next/image";
 import Images from "../../../../utility/images";
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const style = {
   heading: `
@@ -13,7 +19,7 @@ const style = {
   laptop:top-[0.67rem]
   minitab:max-w-[4rem] minitab:top-[0.5rem] minitab:border-[1.5px] 
   mobile:max-w-[2.4rem] 
-  max-w-[2rem] relative tab-[0rem] border-[1.5px] rounded-[83%/60%] border-[1px]`,
+  max-w-[2rem] relative border-[1.5px] rounded-[83%/60%] border-[1px]`,
 
   textOne: `
   desktop:gap-[1.5rem] desktop:pr-[4rem]
@@ -29,7 +35,26 @@ const style = {
 }
 
 export default function OverviewHeading() {
-  return <div className={style.heading}>
+  const headingRef=useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(()=>{
+    gsap.fromTo(headingRef.current,{
+      opacity:0,
+      y:"4vw",
+    
+    },{
+      opacity:1,
+      y:0,
+      duration:0.5,
+      scrollTrigger:{
+        trigger:headingRef.current
+      }
+    
+    })
+  },[]);
+
+
+  return <div className={style.heading} ref={headingRef}>
     <div className="flex flex-col items-center">
       <h2 className={style.textOne}>Investing <SignalCue /> </h2>
       <h2 className={style.textTwo}> <HandCue />  made easy  </h2>

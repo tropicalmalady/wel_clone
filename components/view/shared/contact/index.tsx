@@ -7,12 +7,12 @@ const style = {
     desktop:max-w-[100%]  desktop:px-[12vw] 
     laptop:px-[100px] laptop:max-w-[1400px] 
     minitab:px-[80px]
-    mx-[auto]`,
+    mx-[auto] mb-[5rem] minitab:pt-[10rem] pt-[8rem]`,
 
     container: `
     laptop:rounded-[42%/105%] 
     tab:rounded-[47%/105%] 
-    flex items-center px-[10%] py-[12%] relative rounded-t-[45%] bg-primaryColors-purple200`,
+    flex items-center px-[10%] py-[12%] relative rounded-t-[45%] bg-primaryColors-purple200 hey`,
 
     gifWrapper: `
     desktop:right-[0%]
@@ -23,7 +23,7 @@ const style = {
 }
 
 export default function ContactSection() {
-    return <section>
+    return <section id="contact">
         <div className={style.wrapper}>
             <div className={style.container}>
                 <div className="tab:flex-row tab:items-stretch flex-col-reverse flex items-center">

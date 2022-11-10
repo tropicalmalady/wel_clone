@@ -6,7 +6,7 @@ const style = {
   cardText: `
     desktop:text-[1.17vw]
     laptop:text-[14px] laptop:gap-[7px]
-    text-[9px]`,
+    text-[9px] offerstats__card`,
 
   cardContainer: `
     desktop:w-[18.3vw]
