@@ -1,32 +1,24 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { useEffect, useRef, useState, useLayoutEffect } from 'react';
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import WeltioLoader from "../components/view/misc/loader/index";
 import gsap from "gsap";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const appRef = useRef<HTMLDivElement>(null);
   const [hasAppLoaded, setHasAppLoaded] = useState(false);
-  
 
   useEffect(() => {
     const q = gsap.utils.selector(appRef);
     const loaderLogoDiv = q(".loader__logo--two");
     const loaderFillDiv = q(".loader__fill");
     const loaderDotDiv = q(".loader__dot");
-    const headerCoinDiv=q(".header__coin");
-
-   
-    const headerBannerDiv=q(".header__banner")
-
-    console.log("header coin",headerCoinDiv);
 
     const scaleX = appRef.current!.clientWidth / 9;
     const scaleY = appRef.current!.clientHeight / 9;
     const logoWidth = loaderLogoDiv[0]?.clientWidth ?? 0;
 
     const tl = gsap.timeline();
-    
 
     tl.fromTo(
       loaderLogoDiv,
@@ -43,21 +35,26 @@ function MyApp({ Component, pageProps }: AppProps) {
         loaderDotDiv,
         { y: 0 },
         {
-          y:-20,
-          ease:"sine.out",
+          y: -20,
+          ease: "sine.out",
           fill: "white",
-          duration:1
+          duration: 1,
         }
-      ).to(loaderDotDiv,{
-        scaleY: 1.1,
-        scaleX: .7,
-        ease:"sine.out",
-        delay:0.5
-       },"<")
+      )
+      .to(
+        loaderDotDiv,
+        {
+          scaleY: 1.1,
+          scaleX: 0.7,
+          ease: "sine.out",
+          delay: 0.5,
+        },
+        "<"
+      )
       .to(loaderDotDiv, {
         y: 0,
-        scaleY:1,
-        scaleX: 1, 
+        scaleY: 1,
+        scaleX: 1,
         onComplete: () => {
           gsap.set(loaderFillDiv, { display: "block" });
         },
@@ -67,18 +64,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         y: 10,
         duration: 0.5,
         transformOrigin: "center",
-        onComplete:()=>{
-          setHasAppLoaded(true)
-        }
-      })
+        onComplete: () => {
+          setHasAppLoaded(true);
+        },
+      });
   }, []);
 
-
   return (
-    <div ref={appRef}> 
-     {/* <Component {...pageProps}/> */}
-      {hasAppLoaded? <Component {...pageProps}/>: <WeltioLoader/>}
-    
+    <div ref={appRef}>
+      {hasAppLoaded ? <Component {...pageProps} /> : <WeltioLoader />}
     </div>
   );
 }
