@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-pages/dk.js
+
 
 # dependencies
 /node_modules
@@ -36,4 +36,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+pages/dk.js
+pages/test.tsx
 

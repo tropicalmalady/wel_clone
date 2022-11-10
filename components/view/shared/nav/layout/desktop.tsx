@@ -36,9 +36,33 @@ const headerNavData: linkProps[] = [
 ]
 
 export default function DesktopNav() {
+  const navBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+
+
+    const slideInNav = gsap.to(navBarRef.current, {
+      paused: true,
+      yPercent: -100,
+      duration: 0.2,
+      ease: "expo.out",
+    });
+
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: ({ direction, isActive }) => {
+        if (direction == -1) slideInNav.reverse();
+        if (direction == 1) slideInNav.play();
+        else if (direction == 1 && isActive == true) slideInNav.play();
+      },
+    });
+  }, []);
+
+  useEffect(() => {}, []);
 
   return <nav>
-    <div >
+    <div className="fixed left-0 right-0 z-[100] nav" ref={navBarRef} >
     <div className={style.navbarContainer}>
       <div className="flex justify-between items-center">
         <ul className="flex">
