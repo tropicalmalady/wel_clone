@@ -30,7 +30,7 @@ const style = {
 
 export default function TextLayout() {
   return (
-    <div className="tab:text-left minitab:text-center text-left header__text">
+    <div className="tab:text-left minitab:text-center text-left ">
       <TextHeading />
       <TextBody />
     </div>
@@ -40,7 +40,6 @@ export default function TextLayout() {
 function TextHeading() {
   return (
     <div className={style.headingContainer}>
-      <h1>
         <span>More ways</span>
         <div className={style.imageWrapper}>
           <img
@@ -58,7 +57,6 @@ function TextHeading() {
           />
         </div>
         <span>your money</span>
-      </h1>
     </div>
   );
 }

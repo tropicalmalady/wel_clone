@@ -13,7 +13,6 @@ export default function Header() {
   useEffect(() => {
     const q = gsap.utils.selector(headerRef);
     const coinDiv = q(".header__coin");
-    const textDiv = q(".header__text");
     const videoDiv = q(".header__video");
     const mountTl = gsap.timeline();
 
@@ -27,19 +26,9 @@ export default function Header() {
           scale: 1,
           duration: 1,
         },
-        0.3
-      )
-      .fromTo(
-        textDiv,
-        {
-          y: "3rem",
-          duration: 1,
-        },
-        {
-          y: 0,
-        },
         "<"
       )
+
       .fromTo(
         videoDiv,
         {

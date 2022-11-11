@@ -72,8 +72,7 @@ function NavLinks({handleToggle}:{handleToggle:()=>void})
 
     return <div className="h-[100%] mt-[60px]" ref={navRef}>
          <ul >
-            {navData.map((item, index: number) =><li key={index} className={style.listStyle} onClick={()=>{
-               
+            {navData.map((item, index: number) =><li key={index} className={style.listStyle} onClick={()=>{            
               document.body.style.overflowY = "scroll";
               handleToggle();
             }}><LinkBuilder props={item} /></li>)}

@@ -13,33 +13,33 @@ export default function OfferStats() {
   useLayoutEffect(() => {
     const q=gsap.utils.selector(offerStatsRef);
     const rocketDiv=q(".offerstats__rocket");
-    const chipsDiv=q(".offerstats__chips");
-    const cardDiv=q(".offerstats__card");
+    // const chipsDiv=q(".offerstats__chips");
+    // const cardDiv=q(".offerstats__card");
 
-    const tl=gsap.timeline();
+    // const tl=gsap.timeline();
 
     
-   tl.fromTo(chipsDiv,{
-    rotate:60,
-   },{
-    rotate:0,
-    duration:1,
-    transformOrigin:"top right",
-    ease:"easeOut",
-    scrollTrigger:{
-      trigger:chipsDiv
-    }
-   },0).fromTo(cardDiv,{
-    rotate:-60,
-   },{
-    rotate:0,
-    duration:1,
-    transformOrigin:"top left",
-    ease:"easeOut",
-    scrollTrigger:{
-      trigger:cardDiv
-    }
-   },0)
+  //  tl.fromTo(chipsDiv,{
+  //   rotate:60,
+  //  },{
+  //   rotate:0,
+  //   duration:1,
+  //   transformOrigin:"top right",
+  //   ease:"easeOut",
+  //   scrollTrigger:{
+  //     trigger:chipsDiv
+  //   }
+  //  },0).fromTo(cardDiv,{
+  //   rotate:-60,
+  //  },{
+  //   rotate:0,
+  //   duration:1,
+  //   transformOrigin:"top left",
+  //   ease:"easeOut",
+  //   scrollTrigger:{
+  //     trigger:cardDiv
+  //   }
+  //  },0)
   
     gsap.to(rocketDiv, {
       y: "-4vw",

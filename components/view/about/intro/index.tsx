@@ -10,7 +10,6 @@ export default function AboutIntro() {
     const bannerDiv=q(".header__banner");
     const textDiv=q(".header__text");
 
-
     const tl=gsap.timeline();
     tl.fromTo(bannerDiv,{
       y:"-1rem",

@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       },
       {
         clip: "rect(0, " + logoWidth + "px, " + logoWidth + "px, 0)",
-        duration: 1,
+        duration: 2,
         ease: "sine.in",
       }
     )
@@ -70,6 +70,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       });
   }, []);
 
+  
   return (
     <div ref={appRef}>
       {hasAppLoaded ? <Component {...pageProps} /> : <WeltioLoader />}
