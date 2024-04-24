@@ -85,7 +85,7 @@ function OverviewCard({ props }: { props: OverviewCardProps }) {
             <div className={style.cardContainer}>
                 <div className={style.imageWrapper}>
                     <div className="w-[100%] h-[100%] relative">
-                        <Image src={props.icon} objectFit="contain" layout="fill" />
+                        <Image src={props.icon} objectFit="contain" layout="fill" alt=""/>
                     </div>
                 </div>
 

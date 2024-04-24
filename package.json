@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@studio-freight/react-lenis": "^0.0.47",
     "gsap": "^3.11.1",
     "next": "latest",
     "react": "18.1.0",
