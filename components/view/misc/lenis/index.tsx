@@ -1,5 +1,4 @@
-"use client";
-import { useContext, useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import gsap from "gsap";
 import ReactLenis from "@studio-freight/react-lenis";
 
@@ -19,6 +18,7 @@ export default function Lenis({ children }: { children: React.ReactNode }) {
   });
 
   return (
+    <Fragment>
     <ReactLenis
       root={true}
       ref={lenisRef}
@@ -32,5 +32,6 @@ export default function Lenis({ children }: { children: React.ReactNode }) {
     >
       {children}
     </ReactLenis>
+    </Fragment>
   );
 }
