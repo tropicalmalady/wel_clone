@@ -22,7 +22,6 @@ export function OverviewScreenshot() {
           <img
             src={Images.Landing.screenshot.src}
             alt="screenshot"
-            placeholder="blur"
             className="w-[100%] h-[100%]"
           />
           {/* <Image src={Images.Landing.screenshot} alt="screenshot" placeholder="blur" className="w-[100%] h-[100%]"/> */}
