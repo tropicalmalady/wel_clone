@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Cursor from "./builder/cursor";
 import Lenis from "./view/misc/lenis";
 import ContactSection from "./view/shared/contact";
@@ -7,6 +8,7 @@ import OfferSection from "./view/shared/offer";
 
 export default function Layout({ children }: { children: JSX.Element }) {
   return (
+    <Fragment>
     <Lenis>
       <>
       <Cursor/>
@@ -17,5 +19,6 @@ export default function Layout({ children }: { children: JSX.Element }) {
       <Footer />
       </>
     </Lenis>
+    </Fragment>
   );
 }
