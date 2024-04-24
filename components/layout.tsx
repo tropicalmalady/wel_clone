@@ -8,12 +8,14 @@ import OfferSection from "./view/shared/offer";
 export default function Layout({ children }: { children: JSX.Element }) {
   return (
     <Lenis>
+      <>
       <Cursor/>
       <Nav />
       {children}
       <OfferSection />
       <ContactSection />
       <Footer />
+      </>
     </Lenis>
   );
 }
