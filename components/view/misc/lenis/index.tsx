@@ -18,7 +18,7 @@ export default function Lenis({ children }: { children: React.ReactNode }) {
   });
 
   return (
-    <Fragment>
+    <div>
     <ReactLenis
       root={true}
       ref={lenisRef}
@@ -32,6 +32,6 @@ export default function Lenis({ children }: { children: React.ReactNode }) {
     >
       {children}
     </ReactLenis>
-    </Fragment>
+    </div>
   );
 }
